@@ -1,0 +1,49 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="css/style.css"/><title>Stories - Empowineering</title></head>
+<body>
+<header class="top">
+  <div class="bar">
+    <div class="logo"><img src="img/EMPOWINEERING_Imagotipo_G.png" alt="Empowineering"/></div>
+    <div class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></div>
+    <nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="business-transformation.html">Business Transformation</a></li>
+  <li><a href="services-and-events.html">Services &amp; Events</a></li>
+  <li><a href="empowineering-team.html">Empowineering Team</a></li>
+  <li><a href="stories.html">Stories</a></li>
+  <li><a href="publications.html">Publications</a></li>
+  <li><a href="case-studies.html">Case Studies</a></li>
+  <li><a href="our-ethos.html">Our Ethos</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+  </div>
+</header>
+
+<main class="content">
+  <div class="block" style="padding:10px 14px;margin-bottom:12px"><a href="index.html">Home</a> &gt; Stories</div>
+  <div class='block'><p>Empowineering was forged through the strategic fusion of expertise in human empowerment, business innovation, and technology. Our evolution stems from two distinct yet complementary legacies:</p>
+<p>Humanitarian Productions: A consultancy firm with over 30 years of experience in consulting, video production, and digital media. They specialize in humanitarian and social organizations. Having served over 50 clients in more than 70 countries, Humanitarian Productions precisely engineered solutions for generating insights, sharing knowledge, and enhancing effectiveness.</p>
+<p>K&O San Francisco: An independent advisory firm based in Silicon Valley renowned for its strategic counsel in innovation management, digital transformation, and business growth. K&O developed a unique methodology designed to instill certainty in the boards of directors of corporations, organizations, and governments in the USA, Europe & LATAM.</p>
+<p>This powerful blend was further amplified by the incorporation of seasoned talent, globally experienced in digital and data innovation, digital products, and digital transformation, particularly across Asia and Latin America. This infusion provides the crucial technological prowess that completes Empowineering's holistic approach. This precise integration of human understanding, business innovation, and advanced technology defines Empowineering's unique capacity to deliver transformative solutions.</p></div>
+  <div class="block" style="margin-top:14px;background:#111;color:#fff;border:none;text-align:center;border-radius:12px">
+    Interested? <a href="contact.html" style="color:#fff;text-decoration:underline">Contact us</a>.
+  </div>
+</main>
+<footer>&copy; 2025 Empowineering</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const btn = document.querySelector('.hamburger');
+  const list = document.querySelector('nav ul');
+  if(btn && list){
+    btn.addEventListener('click', ()=>{
+      list.classList.toggle('show');
+      btn.setAttribute('aria-expanded', list.classList.contains('show'));
+    });
+  }
+});
+</script>
+</body></html>

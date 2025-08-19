@@ -1,0 +1,57 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
+<link rel="stylesheet" href="css/style.css"/><title>Contact - Empowineering</title></head>
+<body>
+<header class="top">
+  <div class="bar">
+    <div class="logo"><img src="img/EMPOWINEERING_Imagotipo_G.png" alt="Empowineering"/></div>
+    <div class="hamburger" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></div>
+    <nav>
+<ul>
+  <li><a href="index.html">Home</a></li>
+  <li><a href="business-transformation.html">Business Transformation</a></li>
+  <li><a href="services-and-events.html">Services &amp; Events</a></li>
+  <li><a href="empowineering-team.html">Empowineering Team</a></li>
+  <li><a href="stories.html">Stories</a></li>
+  <li><a href="publications.html">Publications</a></li>
+  <li><a href="case-studies.html">Case Studies</a></li>
+  <li><a href="our-ethos.html">Our Ethos</a></li>
+  <li><a href="contact.html">Contact</a></li>
+</ul>
+</nav>
+  </div>
+</header>
+
+<main class="content">
+  <div class="block" style="padding:10px 14px;margin-bottom:12px"><a href="index.html">Home</a> &gt; Contact</div>
+  <div class='block'><h1 class='title'>Contact</h1><p>WE ENGINEER, EMPOWER, AND PROSPER, ENSURING THAT OUR LEGACY ENDURES BEYOND US.</p>
+<br/>
+<p>If you’re ready to get in touch and start your empowineering journey get in touch by filling out the form below.</p></div>
+<div class='block'>
+<form name="contact" method="POST" data-netlify="true">
+  <input type="hidden" name="form-name" value="contact">
+  <label for="name">Name</label><input id="name" name="name" required>
+  <label for="email">Email</label><input id="email" type="email" name="email" required>
+  <label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea>
+  <button type="submit">Send</button>
+</form>
+</div>
+  <div class="block" style="margin-top:14px;background:#111;color:#fff;border:none;text-align:center;border-radius:12px">
+    Interested? <a href="contact.html" style="color:#fff;text-decoration:underline">Contact us</a>.
+  </div>
+</main>
+<footer>&copy; 2025 Empowineering</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function(){
+  const btn = document.querySelector('.hamburger');
+  const list = document.querySelector('nav ul');
+  if(btn && list){
+    btn.addEventListener('click', ()=>{
+      list.classList.toggle('show');
+      btn.setAttribute('aria-expanded', list.classList.contains('show'));
+    });
+  }
+});
+</script>
+</body></html>

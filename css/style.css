@@ -1,0 +1,65 @@
+
+:root{--ink:#222;--panel:rgba(255,255,255,.92);--inkInv:#fff}
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{font:14px/1.5 Helvetica,Arial,sans-serif;color:var(--ink);
+  background:url('../img/wallpaper.png') center/cover fixed no-repeat;}
+a{color:inherit;text-decoration:none}
+
+header.top{position:sticky;top:0;z-index:1000;backdrop-filter:saturate(140%) blur(4px);
+  background:rgba(255,255,255,.95);border-bottom:1px solid rgba(0,0,0,.06)}
+
+.bar{max-width:1200px;margin:0 auto;display:flex;align-items:center;gap:16px;padding:8px 16px}
+.logo img{height:34px}
+
+nav ul{list-style:none;display:flex;gap:12px;margin:0;padding:0}
+nav a{font-size:13px;padding:6px 8px;border-radius:8px}
+nav a:hover{background:rgba(0,0,0,.06)}
+.hamburger{display:none;flex-direction:column;gap:3px;cursor:pointer}
+.hamburger span{width:22px;height:2px;background:#111;display:block}
+.content{max-width:1180px;margin:18px auto;padding:0 16px}
+.block{background:var(--panel);border:1px solid rgba(0,0,0,.08);border-radius:14px;padding:16px;margin:0 0 14px 0}
+.title{margin:0 0 10px;font-size:20px;font-weight:700}
+.subtitle{margin:10px 0 6px;font-size:16px;font-weight:700}
+/* Home mosaic */
+.home-hero{display:flex;align-items:center;justify-content:space-between;gap:12px}
+.btn{background:#111;color:#fff;padding:10px 14px;border-radius:10px}
+.home-mosaic{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;max-width:1180px;margin:16px auto;padding:0 16px}
+.tile{position:relative;min-height:160px;background:#fff;border-radius:14px;padding:16px;overflow:hidden;transition:transform .25s;display:flex;flex-direction:column;justify-content:flex-end;border:1px solid rgba(0,0,0,.08)}
+.tile:hover{transform:scale(1.02)}
+.tile h2{margin:0 0 6px;font-size:15px}
+.tile p{margin:0;font-size:13px}
+.glyph{position:absolute;top:10px;right:12px;font-size:18px;z-index:3;pointer-events:none}
+.tile.dark{background:#111;color:#fff}
+.tile.team{color:#fff;background:#000 url('../img/team-photo.jpg') center/cover no-repeat}
+.tile.team::after{content:"";position:absolute;inset:0;border-radius:14px;background:rgba(0,0,0,.45);transition:background .2s}
+.tile.team:hover::after{background:rgba(0,0,0,.62)}
+.tile.team *{position:relative;z-index:2;color:#fff}
+/* Explicit grid placement for desktop */
+.tile.btrans{grid-column:1;grid-row:1}
+.tile.ethos{grid-column:2;grid-row:1}
+.tile.services{grid-column:3;grid-row:1}
+.tile.stories{grid-column:4;grid-row:1}
+.tile.pubs{grid-column:2;grid-row:2}
+.tile.team{grid-column:3/5;grid-row:2/4;min-height:340px}
+.tile.cases{grid-column:1/3;grid-row:3}
+footer{margin-top:20px;text-align:center;padding:10px;background:rgba(255,255,255,.92)}
+/* Responsive stack */
+@media (max-width:1000px){
+  .home-mosaic{grid-template-columns:repeat(3,1fr)}
+  .tile.team{grid-column:2/4;grid-row:auto;min-height:280px}
+  .tile.cases{grid-column:1/3}
+}
+@media (max-width:900px){
+  nav ul{display:none;position:absolute;left:0;right:0;top:56px;background:rgba(255,255,255,.98);flex-direction:column;gap:0;border-bottom:1px solid rgba(0,0,0,.06)}
+  nav ul.show{display:flex}
+  .hamburger{display:flex}
+  .home-mosaic{grid-template-columns:repeat(2,1fr)}
+  .tile{min-height:140px;padding:14px}
+  .tile.team{min-height:220px}
+}
+@media (max-width:560px){
+  .home-mosaic{grid-template-columns:1fr}
+  .tile{min-height:130px}
+  .logo img{height:30px}
+}
