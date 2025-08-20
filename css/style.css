@@ -377,3 +377,49 @@ a.linkedin-btn:hover { background:#004182; box-shadow:0 3px 6px rgba(0,0,0,.15);
   margin: 12px auto 0; 
   max-width: 60ch; 
 }
+
+/* === iter-03.3: card alignment + home adaptive === */
+
+/* 1) Internal cards: remove child margins that cause the first tile to sit higher */
+.block:has(.block + .block) {
+  align-items: stretch;               /* force equal top alignment */
+}
+.block:has(.block + .block) > .block {
+  margin: 0;                          /* kill incidental outer margins on children */
+}
+.block .block > :first-child { margin-top: 0; }     /* no extra top margin on first element */
+.block .block > :last-child  { margin-bottom: 0; }  /* no extra bottom margin */
+
+/* Safety: headings inside cards never push cards down */
+.block .block h1,
+.block .block h2,
+.block .block h3,
+.block .block .subtitle { margin-top: 0; }
+
+/* 2) Home: clean adaptive grid, no manual offsets on smaller screens */
+@media (max-width: 1000px) {
+  .home-mosaic {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: auto;
+  }
+  /* reset any explicit desktop placement */
+  .home-mosaic .tile {
+    grid-column: auto !important;
+    grid-row: auto !important;
+  }
+  /* keep big items spanning full width */
+  .home-mosaic .tile.team { grid-column: 1 / -1; min-height: 280px; }
+  .home-mosaic .tile.cases { grid-column: 1 / -1; }
+}
+
+@media (max-width: 560px) {
+  .home-mosaic {
+    grid-template-columns: 1fr;
+  }
+  .home-mosaic .tile { min-height: 130px; }
+  .home-mosaic .tile.team { min-height: 220px; }
+}
+
+/* Optional: a little extra consistency for card spacing on all pages */
+.block { --gap:16px }
+.content .block + .block { margin-top: 14px; }
