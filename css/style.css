@@ -63,3 +63,70 @@ footer{margin-top:20px;text-align:center;padding:10px;background:rgba(255,255,25
   .tile{min-height:130px}
   .logo img{height:30px}
 }
++/* === Contact form layout (iter-01) === */
++form[name="contact"], form[action*="contact"] {
++  display: grid;
++  grid-template-columns: 1fr;
++  gap: 12px;
++  margin: 8px 0;
++}
++
++form[name="contact"] label {
++  font-weight: 600;
++  font-size: 14px;
++}
++
++form[name="contact"] input[type="text"],
++form[name="contact"] input[type="email"],
++form[name="contact"] input[type="tel"],
++form[name="contact"] input[type="url"],
++form[name="contact"] select,
++form[name="contact"] textarea {
++  width: 100%;
++  display: block;
++  padding: 10px 12px;
++  border: 1px solid rgba(0,0,0,.18);
++  border-radius: 10px;
++  background: #fff;
++  font: 14px/1.45 Helvetica, Arial, sans-serif;
++}
++
++form[name="contact"] textarea {
++  min-height: 160px;
++  resize: vertical;
++}
++
++form[name="contact"] button[type="submit"],
++form[name="contact"] input[type="submit"] {
++  appearance: none;
++  border: 0;
++  border-radius: 10px;
++  padding: 12px 16px;
++  background: #111;
++  color: #fff;
++  font-weight: 700;
++  cursor: pointer;
++  width: fit-content;
++}
++
++form[name="contact"] button[type="submit"]:hover,
++form[name="contact"] input[type="submit"]:hover {
++  filter: brightness(1.05);
++}
++
++/* Group two fields side-by-side on wider screens (if you wrap them) */
++.form-row {
++  display: grid;
++  grid-template-columns: 1fr;
++  gap: 12px;
++}
++@media (min-width: 720px) {
++  .form-row.two {
++    grid-template-columns: 1fr 1fr;
++  }
++}
++
++/* Keep form nicely spaced inside your block cards */
++.block form[name="contact"] {
++  margin-top: 6px;
++}
