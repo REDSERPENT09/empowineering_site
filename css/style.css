@@ -309,8 +309,19 @@ a.linkedin-btn:hover { background:#004182; box-shadow:0 3px 6px rgba(0,0,0,.15);
 /* Team grid: 2 columns desktop, 1 column mobile */
 .team-grid { display:flex; flex-wrap:wrap; gap:16px; }
 .team-card { flex:1 1 calc(50% - 8px); max-width:calc(50% - 8px); text-align:center; }
-@media (max-width: 720px){
-  .team-card { flex-basis:100%; max-width:100%; }
+.team-card p {
+  line-height: 1.5;
+  font-size: 0.95rem;
+  max-width: 95%;
+  min-height: 550px;
+  margin: 0 auto;
+}
+@media (max-width: 992px){
+  .team-card {
+  flex: 1 1 calc(25% - 20px)%; /* instead of 1 1 30% or similar */
+  max-width: calc(25% - 20px); /* you can raise this to ~320px */
+  margin: 0 10px;   /* reduce side margin */
+}
 }
 
 /* Card internals */
