@@ -128,3 +128,113 @@ form[name="contact"] input[type="submit"]:hover {
 
 /* Keep form nicely spaced inside your block cards */
 .block form[name="contact"] { margin-top: 6px; }
+
+
+/* === iter-02: modernized internal-page styling (v11 look) === */
+
+/* Type scale & rhythm */
+.content { max-width: 1180px; margin: 18px auto; padding: 0 16px }
+.content .block { margin: 0 0 16px 0 }
+h1.title, .content > .block h1 { font-size: 26px; line-height: 1.25; margin: 0 0 10px; letter-spacing: -0.01em }
+.subtitle, h2.subtitle, .content h2 { font-size: 18px; font-weight: 700; margin: 8px 0 10px }
+.content p { max-width: 75ch; margin: 8px 0 }
+
+/* Breadcrumb bar */
+.content > .block:first-child { 
+  padding: 10px 14px; 
+  background: rgba(255,255,255,.86);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 12px;
+  backdrop-filter: blur(2px);
+  box-shadow: 0 1px 0 rgba(0,0,0,.03) inset;
+}
+
+/* Card treatment for nested blocks (e.g., services/principles/publications items) */
+.block .block {
+  background: rgba(255,255,255,.95);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  padding: 16px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.block .block:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 16px 36px rgba(0,0,0,.12);
+  border-color: rgba(0,0,0,.12);
+}
+.block .block h3, .block .block h2, .block .block .subtitle { margin-top: 0 }
+
+/* Simple responsive grids when multiple inner cards are siblings */
+.block { --gap:16px }
+.block:has(.block + .block) { }
+@media (min-width: 860px) {
+  .block:has(.block + .block) {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: var(--gap);
+  }
+  /* Two across if only two cards fit better */
+  .block:has(.block:nth-child(2):last-child) {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+@media (min-width: 560px) and (max-width: 859px) {
+  .block:has(.block + .block) {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: var(--gap);
+  }
+}
+
+/* Publications: align download button to the right; beautify buttons */
+.block .block a[download] {
+  float: right;
+  margin-left: 12px;
+  appearance: none;
+  border: 0;
+  border-radius: 12px;
+  padding: 10px 14px;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 6px 14px rgba(0,0,0,.18);
+  transition: transform .15s ease, filter .15s ease, box-shadow .15s ease;
+}
+.block .block a[download]:hover {
+  filter: brightness(1.05);
+  transform: translateY(-1px);
+  box-shadow: 0 10px 22px rgba(0,0,0,.22);
+}
+
+/* “Interested? Contact us.” callout — center, clean */
+.content > .block:last-of-type {
+  background: #111;
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  text-align: center;
+}
+.content > .block:last-of-type a { color: #fff; text-decoration: underline }
+
+/* Lists inside cards read better */
+.block .block ul, .block .block ol { margin: 8px 0 0 18px }
+.block .block li { margin: 6px 0 }
+
+/* Soften outer cards (top-level .block) to match v11 glass look */
+.block {
+  background: rgba(255,255,255,.90);
+  border: 1px solid rgba(0,0,0,.06);
+  border-radius: 14px;
+  backdrop-filter: blur(3px);
+  box-shadow: 0 4px 14px rgba(0,0,0,.05);
+}
+
+/* Tighten vertical whitespace between stacked sections */
+.content .block + .block { margin-top: 14px }
+
+/* Utilities you can reuse later without HTML changes */
+.lead { font-size: 17px; line-height: 1.55; opacity: .9 }
+.eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; opacity: .75; margin-bottom: 4px }
