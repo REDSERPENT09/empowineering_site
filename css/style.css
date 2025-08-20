@@ -238,3 +238,54 @@ h1.title, .content > .block h1 { font-size: 26px; line-height: 1.25; margin: 0 0
 /* Utilities you can reuse later without HTML changes */
 .lead { font-size: 17px; line-height: 1.55; opacity: .9 }
 .eyebrow { text-transform: uppercase; letter-spacing: .08em; font-size: 12px; opacity: .75; margin-bottom: 4px }
+
+/* === iter-02.1 components === */
+
+/* Buttons */
+.btn { display:inline-block; padding:10px 14px; border-radius:12px; font-weight:700; text-decoration:none }
+.btn.primary { background:#111; color:#fff; box-shadow:0 6px 14px rgba(0,0,0,.18); }
+.btn.primary:hover { filter:brightness(1.06) }
+
+/* Home hero (white card with CTA button aligned right) */
+.cta-hero { 
+  display:flex; align-items:center; justify-content:space-between; gap:12px;
+  background:rgba(255,255,255,.92); border:1px solid rgba(0,0,0,.08); 
+  border-radius:14px; padding:14px 16px; 
+}
+
+/* IMPORTANT: don’t force the last .block to be black anymore.
+   We’ll only darken the contact band when we explicitly add .contact-cta */
+.content > .block:last-of-type { 
+  background: rgba(255,255,255,.90); color: inherit; border: 1px solid rgba(0,0,0,.06);
+}
+.content > .block.contact-cta {
+  background:#111; color:#fff; border:none; text-align:center; border-radius:12px;
+}
+.content > .block.contact-cta a { color:#fff; text-decoration:underline }
+
+/* Card style for nested blocks (v11 look, already present but reinforced here) */
+.block .block {
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  box-shadow: 0 10px 24px rgba(0,0,0,.08);
+  padding: 16px;
+  transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+.block .block:hover{ transform:translateY(-2px); box-shadow:0 16px 36px rgba(0,0,0,.12); border-color:rgba(0,0,0,.12) }
+
+/* Auto-grid for groups of inner cards */
+.block { --gap:16px }
+@supports(selector(:has(*))){
+  @media (min-width: 860px){
+    .block:has(.block + .block){ display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:var(--gap) }
+    .block.grid-2{ grid-template-columns:repeat(2,minmax(0,1fr)) }
+  }
+  @media (min-width:560px) and (max-width:859px){
+    .block:has(.block + .block){ display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:var(--gap) }
+  }
+}
+
+/* Download button style inside publication cards (align right) */
+.pub-actions { display:flex; gap:10px; justify-content:flex-end; align-items:center }
+a[download].btn.primary { white-space:nowrap }
