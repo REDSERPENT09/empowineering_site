@@ -331,3 +331,49 @@ a.linkedin-btn:hover { background:#004182; box-shadow:0 3px 6px rgba(0,0,0,.15);
 /* iter-03.1: team bios */
 .team-bio { text-align:left; margin-top:8px; font-size:14px; line-height:1.55 }
 .team-bio p { margin:6px 0 }
+
+/* === iter-03.2: Team layout fixes (width, gaps, overrides) === */
+
+/* Force flex layout and neutralize any auto-grid */
+.team-grid {
+  display: flex !important;
+  flex-wrap: wrap;
+  gap: 24px;
+  justify-content: center;
+  grid-template-columns: none !important; /* in case grid was applied */
+}
+
+/* Desktop: 4-up; Tablet: 2-up; Mobile: 1-up */
+.team-card { 
+  text-align: center;
+  flex: 1 1 100%;
+  max-width: 100%;
+}
+@media (min-width: 720px) {
+  .team-card { 
+    flex: 1 1 calc(50% - 24px);
+    max-width: calc(50% - 24px);
+  }
+}
+@media (min-width: 1100px) {
+  .team-card { 
+    flex: 1 1 calc(25% - 24px);
+    max-width: calc(25% - 24px);
+  }
+}
+
+/* Paragraphs: remove the accidental huge min-height and narrow width */
+.team-card p {
+  font-size: 14px;
+  line-height: 1.55;
+  max-width: none;
+  min-height: 0;            /* overrides previous 550px */
+  margin: 0 auto;
+}
+
+/* Keep bios left-aligned and comfortably wide */
+.team-bio { 
+  text-align: left; 
+  margin: 12px auto 0; 
+  max-width: 60ch; 
+}
