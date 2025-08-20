@@ -289,3 +289,31 @@ h1.title, .content > .block h1 { font-size: 26px; line-height: 1.25; margin: 0 0
 /* Download button style inside publication cards (align right) */
 .pub-actions { display:flex; gap:10px; justify-content:flex-end; align-items:center }
 a[download].btn.primary { white-space:nowrap }
+
+/* === iter-03: Team page + LinkedIn button === */
+
+/* LinkedIn button */
+a.linkedin-btn {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 6px;
+  background: #0a66c2;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  margin-top: 8px;
+  transition: background .2s ease, box-shadow .2s ease, transform .15s ease;
+}
+a.linkedin-btn:hover { background:#004182; box-shadow:0 3px 6px rgba(0,0,0,.15); transform: translateY(-1px); }
+
+/* Team grid: 2 columns desktop, 1 column mobile */
+.team-grid { display:flex; flex-wrap:wrap; gap:16px; }
+.team-card { flex:1 1 calc(50% - 8px); max-width:calc(50% - 8px); text-align:center; }
+@media (max-width: 720px){
+  .team-card { flex-basis:100%; max-width:100%; }
+}
+
+/* Card internals */
+.team-photo { width:160px; height:160px; object-fit:cover; border-radius:50%; margin-bottom:12px; }
+.team-name { margin:0 0 4px; font-size:18px; font-weight:700; }
+.team-role { margin:0 0 8px; font-size:14px; opacity:.85; }
