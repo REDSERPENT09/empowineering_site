@@ -9,7 +9,9 @@
 <body>
   <header class="top">
     <div class="bar">
-      <a class="logo" href="index.html"><img src="img/logo.png" alt="Empowineering"></a>
+      <a class="logo" href="index.html">
+        <img src="img/EMPOWINEERING_Imagotipo_G.png" alt="Empowineering">
+      </a>
       <nav>
         <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
           <span></span><span></span><span></span>
@@ -35,63 +37,72 @@
       <a href="index.html">Home</a> &gt; Publications Access
     </div>
 
-    <!-- intro -->
-    <div class="block">
-      <h1 class="title">Access Publications</h1>
-      <p class="lead">
-        Thanks for your interest—we’re delighted to share some of our thinking with you.<br>
-        Please fill out this short form to access the whitepapers and publications.
-      </p>
-      <p>
-        We’re happy to be in touch, so feel free to share the best way to reach you.
-      </p>
+<!-- intro -->
+<div class="block downloads-form">
+  <h1 class="title">Access Publications</h1>
+  <p class="lead">
+    Thanks for your interest—we’re delighted to share some of our thinking with you.
+    Please fill out this short form to access the whitepapers and publications.
+  </p>
+  <p>We’re happy to be in touch, so feel free to share the best way to reach you.</p>
+</div>
+
+<!-- form -->
+<div class="block downloads-form">
+  <form name="pubs-access" method="POST" data-netlify="true" onsubmit="grantAccess(event)">
+    <input type="hidden" name="form-name" value="pubs-access">
+
+    <div class="form-grid two">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+      </div>
     </div>
 
-    <!-- form -->
-    <div class="block">
-      <form name="pubs-access" method="POST" data-netlify="true" onsubmit="grantAccess(event)">
-        <input type="hidden" name="form-name" value="pubs-access">
-        <div class="form-row two">
-          <div>
-            <label for="name">Name</label>
-            <input id="name" name="name" required>
-          </div>
-          <div>
-            <label for="email">Email</label>
-            <input id="email" type="email" name="email" required>
-          </div>
-        </div>
-
-        <div class="form-row two">
-          <div>
-            <label for="company">Company</label>
-            <input id="company" name="company">
-          </div>
-          <div>
-            <label for="role">Role</label>
-            <input id="role" name="role">
-          </div>
-        </div>
-
-        <div>
-          <label for="country">Country/Region</label>
-          <input id="country" name="country">
-        </div>
-
-        <div>
-          <label for="interest">What are you looking to explore?</label>
-          <textarea id="interest" name="interest" rows="4" placeholder="e.g., human-centered transformation, AI adoption, leadership development"></textarea>
-        </div>
-
-        <label style="display:flex;align-items:center;gap:8px;margin:6px 0 10px">
-          <input type="checkbox" id="consent" required>
-          I agree to be contacted about Empowineering insights and services.
-        </label>
-
-        <button type="submit">Continue to Publications</button>
-        <p style="margin:8px 0 0;font-size:12px;opacity:.75">Already completed this form? <a href="publications.html" onclick="localStorage.setItem('downloadsAccessGranted','1')">Go to Publications</a>.</p>
-      </form>
+    <div class="form-grid two">
+      <div class="form-field">
+        <label for="company">Company</label>
+        <input id="company" name="company">
+      </div>
+      <div class="form-field">
+        <label for="role">Role</label>
+        <input id="role" name="role">
+      </div>
     </div>
+
+    <div class="form-grid">
+      <div class="form-field">
+        <label for="country">Country/Region</label>
+        <input id="country" name="country">
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-field">
+        <label for="interest">What are you looking to explore?</label>
+        <textarea id="interest" name="interest" placeholder="e.g., human-centered transformation, AI adoption, leadership development"></textarea>
+      </div>
+    </div>
+
+    <div class="consent-row">
+      <input type="checkbox" id="consent" required>
+      <label for="consent">I agree to be contacted about Empowineering insights and services.</label>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Continue to Publications</button>
+    </div>
+
+    <p class="form-helper" style="font-size:12px;opacity:.75">
+      Already completed this form?
+      <a href="publications.html" onclick="localStorage.setItem('downloadsAccessGranted','1')">Go to Publications</a>.
+    </p>
+  </form>
+</div>
   </main>
 
   <footer>
