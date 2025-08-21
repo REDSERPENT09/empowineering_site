@@ -487,3 +487,25 @@ header.top .bar { justify-content: space-between; }
     background-size: cover !important;
   }
 }
+/* === iter-04.2: Case Studies typography & spacing (no global side effects) === */
+.case-detail {
+  max-width: 1100px;
+  background: rgba(255,255,255,.96);
+  border: 1px solid rgba(0,0,0,.08);
+  border-radius: 14px;
+  padding: 18px;
+}
+
+.case-detail h2 { margin: 0 0 8px; font-size: 26px; line-height: 1.2; }
+.case-detail h3 { margin: 16px 0 6px; font-size: 18px; line-height: 1.35; }
+.case-detail p  { margin: 8px 0; }
+.case-detail ul { margin: 8px 0 8px 22px; padding: 0; }
+.case-detail li { margin: 4px 0; }
+
+.case-detail blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-left: 4px solid rgba(0,0,0,.15);
+  background: rgba(0,0,0,.04);
+  border-radius: 8px;
+}
