@@ -1,3 +1,11 @@
+<script>
+  try {
+    if (localStorage.getItem('downloadsAccessGranted') !== '1') {
+      window.location.replace('downloads.html');
+    }
+  } catch(_) {}
+</script>
+
 <!doctype html><html lang="en"><head>
 <meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/>
 <link rel="stylesheet" href="css/style.css"/><title>Publications - Empowineering</title></head>
@@ -13,7 +21,7 @@
   <li><a href="services-and-events.html">Services &amp; Events</a></li>
   <li><a href="empowineering-team.html">Empowineering Team</a></li>
   <li><a href="stories.html">Stories</a></li>
-  <li><a href="publications.html">Publications</a></li>
+  <li><a href="downloads.html">Publications</a></li>
   <li><a href="case-studies.html">Case Studies</a></li>
   <li><a href="our-ethos.html">Our Ethos</a></li>
   <li><a href="contact.html">Contact</a></li>
