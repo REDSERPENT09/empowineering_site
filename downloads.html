@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Access Publications</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="top">
+    <div class="bar">
+      <a class="logo" href="index.html"><img src="img/logo.png" alt="Empowineering"></a>
+      <nav>
+        <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+          <span></span><span></span><span></span>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="business-transformation.html">Business Transformation</a></li>
+          <li><a href="services-and-events.html">Services &amp; Events</a></li>
+          <li><a href="empowineering-team.html">Empowineering Team</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="downloads.html">Publications</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="our-ethos.html">Our Ethos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <!-- breadcrumb -->
+    <div class="block" style="padding:10px 14px;margin-bottom:12px">
+      <a href="index.html">Home</a> &gt; Publications Access
+    </div>
+
+    <!-- intro -->
+    <div class="block">
+      <h1 class="title">Access Publications</h1>
+      <p class="lead">
+        Thanks for your interest—we’re delighted to share some of our thinking with you.<br>
+        Please fill out this short form to access the whitepapers and publications.
+      </p>
+      <p>
+        We’re happy to be in touch, so feel free to share the best way to reach you.
+      </p>
+    </div>
+
+    <!-- form -->
+    <div class="block">
+      <form name="pubs-access" method="POST" data-netlify="true" onsubmit="grantAccess(event)">
+        <input type="hidden" name="form-name" value="pubs-access">
+        <div class="form-row two">
+          <div>
+            <label for="name">Name</label>
+            <input id="name" name="name" required>
+          </div>
+          <div>
+            <label for="email">Email</label>
+            <input id="email" type="email" name="email" required>
+          </div>
+        </div>
+
+        <div class="form-row two">
+          <div>
+            <label for="company">Company</label>
+            <input id="company" name="company">
+          </div>
+          <div>
+            <label for="role">Role</label>
+            <input id="role" name="role">
+          </div>
+        </div>
+
+        <div>
+          <label for="country">Country/Region</label>
+          <input id="country" name="country">
+        </div>
+
+        <div>
+          <label for="interest">What are you looking to explore?</label>
+          <textarea id="interest" name="interest" rows="4" placeholder="e.g., human-centered transformation, AI adoption, leadership development"></textarea>
+        </div>
+
+        <label style="display:flex;align-items:center;gap:8px;margin:6px 0 10px">
+          <input type="checkbox" id="consent" required>
+          I agree to be contacted about Empowineering insights and services.
+        </label>
+
+        <button type="submit">Continue to Publications</button>
+        <p style="margin:8px 0 0;font-size:12px;opacity:.75">Already completed this form? <a href="publications.html" onclick="localStorage.setItem('downloadsAccessGranted','1')">Go to Publications</a>.</p>
+      </form>
+    </div>
+  </main>
+
+  <footer>
+    <small>&copy; <span id="y"></span> Empowineering</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+
+    // If already granted, skip the form
+    if (localStorage.getItem('downloadsAccessGranted') === '1') {
+      // Optional: uncomment to auto-redirect
+      // window.location.replace('publications.html');
+    }
+
+    // On submit: mark access granted and redirect
+    function grantAccess(e){
+      e.preventDefault();
+      if(!document.getElementById('consent').checked) return;
+      try { localStorage.setItem('downloadsAccessGranted','1'); } catch(_) {}
+      // If hosted on Netlify later, the POST will be captured automatically (data-netlify="true")
+      // For GitHub Pages, we just proceed client-side.
+      window.location.href = 'publications.html';
+    }
+  </script>
+</body>
+</html>

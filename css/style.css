@@ -509,3 +509,8 @@ header.top .bar { justify-content: space-between; }
   background: rgba(0,0,0,.04);
   border-radius: 8px;
 }
+
+/* optional: downloads form cues */
+main .block:first-of-type + .block { /* the intro block */
+  border: 1px solid rgba(0,0,0,.06);
+}
