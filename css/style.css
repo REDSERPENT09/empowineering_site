@@ -642,3 +642,17 @@ form[name="pubs-access"] input[type="submit"]:hover {
   padding-left: 0;
   padding-right: 0;
 }
+
+/* --- Fix for "+" sign alignment in tiles --- */
+.tile {
+  position: relative; /* make sure the tile itself is the reference */
+}
+
+.tile .plus {
+  position: absolute;
+  top: 12px;    /* adjust spacing as needed */
+  right: 12px;  /* adjust spacing as needed */
+  font-size: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
