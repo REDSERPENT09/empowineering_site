@@ -589,3 +589,56 @@ form[name="pubs-access"] input[type="submit"]:hover {
   font-size: 12px;
   opacity: .8;
 }
+
+/* === downloads form v2 (left-aligned, tidy) === */
+.downloads-form { max-width: 880px; }
+
+.downloads-form form[name="pubs-access"]{
+  display: grid;
+  gap: 14px;
+  margin: 8px 0;
+}
+
+.form-grid{ display:grid; grid-template-columns:1fr; gap:12px; }
+@media (min-width: 860px){
+  .form-grid.two{ grid-template-columns: 1fr 1fr; }
+}
+
+.form-field label{ display:block; font-weight:600; font-size:14px; margin:0 0 6px; }
+.form-field input,
+.form-field textarea{
+  width:100%;
+  padding:10px 12px;
+  border:1px solid rgba(0,0,0,.18);
+  border-radius:10px;
+  background:#fff;
+  font:14px/1.45 Helvetica, Arial, sans-serif;
+}
+.form-field textarea{ min-height:160px; resize:vertical; }
+
+.consent-row{ display:flex; align-items:center; gap:8px; }
+.actions{ display:flex; gap:10px; }
+
+/* === iter-width-normalize: make all main parents match the breadcrumb/container width === */
+/* Use the .content container width everywhere; kill per-section narrow widths */
+.case-detail { max-width: none; }          /* was 1100px */
+.post-detail { max-width: none; }
+.downloads-form { max-width: none; }       /* was 880px */
+
+/* Make sure these parent blocks align flush with the breadcrumb edges */
+.block.cards-grid,
+.case-detail,
+.post-detail,
+.ethos-grid,
+.downloads-form {
+  margin-left: 0;
+  margin-right: 0;
+  /* they already sit inside .content, which sets the true width */
+}
+
+/* Optional safety: if any page introduced a wrapper with its own width, neutralize it */
+.cs-container, .downloads-wrap {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
