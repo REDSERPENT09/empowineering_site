@@ -23,15 +23,54 @@
 </header>
 
 <main class="content">
-  <div class="block" style="padding:10px 14px;margin-bottom:12px"><a href="index.html">Home</a> &gt; Stories</div>
-  <div class='block'><p>Empowineering was forged through the strategic fusion of expertise in human empowerment, business innovation, and technology. Our evolution stems from two distinct yet complementary legacies:</p>
-<p>Humanitarian Productions: A consultancy firm with over 30 years of experience in consulting, video production, and digital media. They specialize in humanitarian and social organizations. Having served over 50 clients in more than 70 countries, Humanitarian Productions precisely engineered solutions for generating insights, sharing knowledge, and enhancing effectiveness.</p>
-<p>K&O San Francisco: An independent advisory firm based in Silicon Valley renowned for its strategic counsel in innovation management, digital transformation, and business growth. K&O developed a unique methodology designed to instill certainty in the boards of directors of corporations, organizations, and governments in the USA, Europe & LATAM.</p>
-<p>This powerful blend was further amplified by the incorporation of seasoned talent, globally experienced in digital and data innovation, digital products, and digital transformation, particularly across Asia and Latin America. This infusion provides the crucial technological prowess that completes Empowineering's holistic approach. This precise integration of human understanding, business innovation, and advanced technology defines Empowineering's unique capacity to deliver transformative solutions.</p></div>
-  <div class="block" style="margin-top:14px;background:#111;color:#fff;border:none;text-align:center;border-radius:12px">
-    Interested? <a href="contact.html" style="color:#fff;text-decoration:underline">Contact us</a>.
+  <!-- breadcrumb -->
+  <div class="block" style="padding:10px 14px;margin-bottom:12px">
+    <a href="index.html">Home</a> &gt; Stories
+  </div>
+
+  <!-- page title -->
+  <div class="block">
+    <h1 class="title">Stories</h1>
+    <p class="lead">A light blog-style feed. New posts will appear as cards below.</p>
+  </div>
+
+  <!-- blog list -->
+  <div class="block blog-list cards-grid">
+    <!-- Post 1 (current) -->
+    <a class="card" href="#post-origin">
+      <div class="meta">Origin Story &nbsp;•&nbsp; Empowineering</div>
+      <h3>Our Origin: Humanitarian Productions + K&amp;O San Francisco</h3>
+      <p>How two complementary legacies—human empowerment and strategic innovation—merged to form Empowineering.</p>
+      <div class="actions"><span class="badge">Read</span></div>
+    </a>
+
+    <!-- When you add a new post, duplicate another .card here and link to a new #post-... section -->
+  </div>
+
+  <!-- post detail (keeps your existing story content, but presented as a post) -->
+  <article id="post-origin" class="block post-detail">
+    <h2>Our Origin</h2>
+    <p>Empowineering was forged through the strategic fusion of expertise in human empowerment, business innovation, and technology.</p>
+
+    <div class="cards-grid" style="--gap:12px">
+      <div class="card">
+        <h3>Humanitarian Productions</h3>
+        <p>Consultancy with 30+ years in consulting, video production, and digital media; specializing in humanitarian and social organizations, serving 50+ clients in 70+ countries.</p>
+      </div>
+      <div class="card">
+        <h3>K&amp;O San Francisco</h3>
+        <p>Independent advisory in Silicon Valley for innovation management and business growth, guiding boards across the USA, Europe &amp; LATAM.</p>
+      </div>
+    </div>
+
+    <p style="margin-top:10px">Seasoned digital and data talent in Asia &amp; LATAM completes our holistic approach.</p>
+  </article>
+
+  <div class="block contact-cta">
+    Want updates? <a href="contact.html">Get in touch</a>.
   </div>
 </main>
+
 <footer>&copy; 2025 Empowineering</footer>
 
 <script>
