@@ -9,7 +9,9 @@
 <body>
   <header class="top">
     <div class="bar">
-      <a class="logo" href="index.html"><img src="img/logo.png" alt="Empowineering"></a>
+      <a class="logo" href="index.html">
+        <img src="img/EMPOWINEERING_Imagotipo_G.png" alt="Empowineering">
+      </a>
       <nav>
         <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
           <span></span><span></span><span></span>
@@ -83,13 +85,17 @@
           <textarea id="interest" name="interest" rows="4" placeholder="e.g., human-centered transformation, AI adoption, leadership development"></textarea>
         </div>
 
-        <label style="display:flex;align-items:center;gap:8px;margin:6px 0 10px">
-          <input type="checkbox" id="consent" required>
-          I agree to be contacted about Empowineering insights and services.
-        </label>
+<input type="checkbox" id="consent" required>
+<label for="consent" style="display:flex;align-items:center;gap:8px;margin:6px 0 10px">
+  I agree to be contacted about Empowineering insights and services.
+</label>
 
         <button type="submit">Continue to Publications</button>
-        <p style="margin:8px 0 0;font-size:12px;opacity:.75">Already completed this form? <a href="publications.html" onclick="localStorage.setItem('downloadsAccessGranted','1')">Go to Publications</a>.</p>
+        
+    // Helper link
+        <p class="form-helper">
+  Already completed this form? <a href="publications.html" onclick="localStorage.setItem('downloadsAccessGranted','1')">Go to Publications</a>.
+        </p>
       </form>
     </div>
   </main>

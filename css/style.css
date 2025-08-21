@@ -514,3 +514,78 @@ header.top .bar { justify-content: space-between; }
 main .block:first-of-type + .block { /* the intro block */
   border: 1px solid rgba(0,0,0,.06);
 }
+
+/* === downloads form styling (match contact form) === */
+form[name="contact"],
+form[name="pubs-access"] {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 12px;
+  margin: 8px 0;
+}
+
+form[name="contact"] label,
+form[name="pubs-access"] label {
+  font-weight: 600;
+  font-size: 14px;
+}
+
+form[name="contact"] input[type="text"],
+form[name="contact"] input[type="email"],
+form[name="contact"] input[type="tel"],
+form[name="contact"] input[type="url"],
+form[name="contact"] select,
+form[name="contact"] textarea,
+form[name="pubs-access"] input[type="text"],
+form[name="pubs-access"] input[type="email"],
+form[name="pubs-access"] input[type="tel"],
+form[name="pubs-access"] input[type="url"],
+form[name="pubs-access"] select,
+form[name="pubs-access"] textarea {
+  width: 100%;
+  display: block;
+  padding: 10px 12px;
+  border: 1px solid rgba(0,0,0,.18);
+  border-radius: 10px;
+  background: #fff;
+  font: 14px/1.45 Helvetica, Arial, sans-serif;
+}
+
+form[name="contact"] textarea,
+form[name="pubs-access"] textarea {
+  min-height: 160px;
+  resize: vertical;
+}
+
+form[name="contact"] button[type="submit"],
+form[name="contact"] input[type="submit"],
+form[name="pubs-access"] button[type="submit"],
+form[name="pubs-access"] input[type="submit"] {
+  appearance: none;
+  border: 0;
+  border-radius: 10px;
+  padding: 12px 16px;
+  background: #111;
+  color: #fff;
+  font-weight: 700;
+  cursor: pointer;
+  width: fit-content;
+}
+
+form[name="contact"] button[type="submit"]:hover,
+form[name="contact"] input[type="submit"]:hover,
+form[name="pubs-access"] button[type="submit"]:hover,
+form[name="pubs-access"] input[type="submit"]:hover {
+  filter: brightness(1.05);
+}
+
+/* shared row helper */
+.form-row { display: grid; grid-template-columns: 1fr; gap: 12px; }
+@media (min-width: 720px) { .form-row.two { grid-template-columns: 1fr 1fr; } }
+
+/* make the tiny helper line readable */
+.block .form-helper {
+  margin: 8px 0 0;
+  font-size: 12px;
+  opacity: .8;
+}
