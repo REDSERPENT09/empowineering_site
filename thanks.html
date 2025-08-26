@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <title>Thanks to contact us at Empowineering</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="css/style.css" />
+  <meta http-equiv="refresh" content="6; url=index.html" />
+</head>
+<body>
+  <!-- same header as other pages -->
+  <header class="top">
+    <div class="bar">
+      <a class="logo" href="index.html">
+        <img src="img/EMPOWINEERING_Imagotipo_G.png" alt="Empowineering" />
+      </a>
+      <nav>
+        <div class="hamburger" onclick="document.querySelector('nav ul').classList.toggle('show')">
+          <span></span><span></span><span></span>
+        </div>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="business-transformation.html">Business Transformation</a></li>
+          <li><a href="services-and-events.html">Services &amp; Events</a></li>
+          <li><a href="empowineering-team.html">Empowineering Team</a></li>
+          <li><a href="stories.html">Stories</a></li>
+          <li><a href="publications.html">Publications</a></li>
+          <li><a href="case-studies.html">Case Studies</a></li>
+          <li><a href="our-ethos.html">Our Ethos</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main class="content">
+    <div class="block" style="padding:10px 14px;margin-bottom:12px">
+      <a href="index.html">Home</a> &gt; Thanks
+    </div>
+
+    <section class="block" style="text-align:left">
+      <h1 class="title">Thanks — we received your message.</h1>
+      <p>We’ll get back to you shortly. In the meantime, you can:</p>
+      <ul>
+        <li><a class="btn" href="publications.html">Browse Publications</a></li>
+        <li><a class="btn" href="case-studies.html">See Case Studies</a></li>
+      </ul>
+      <p style="opacity:.7;margin-top:10px">You’ll be redirected to the home page in a few seconds.</p>
+    </section>
+  </main>
+
+  <footer>
+    <small>&copy; <span id="y"></span> Empowineering</small>
+  </footer>
+
+  <script>
+    document.getElementById('y').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
