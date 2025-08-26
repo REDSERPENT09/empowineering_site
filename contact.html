@@ -28,19 +28,40 @@
 <br/>
 <p>If you’re ready to get in touch and start your empowineering journey get in touch by filling out the form below.</p></div>
 <div class='block'>
-<form id="contact-form"
-      action="https://formspree.io/f/myzdydkk"
-      method="POST" accept-charset="utf-8">
-  <input type="hidden" name="form-name" value="contact">
-  <label for="name">Name</label><input id="name" name="name" required>
-  <label for="email">Email</label><input id="email" type="email" name="email" required>
-  <label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea>
-  <!-- Spam honeypot (kept hidden) -->
-<input type="text" name="_gotcha" autocomplete="off" tabindex="-1" style="display:none">
-<!-- Email subject shown in your Formspree notification -->
-<input type="hidden" name="_subject" value="New contact via empowineering.com">
-  <button type="submit">Send</button>
-</form>
+<!-- Contact form card -->
+<div class="block">
+  <form id="contact-form" class="contact-form"
+        action="https://formspree.io/f/myzdydkk"
+        method="POST" accept-charset="utf-8">
+
+    <input type="hidden" name="form-name" value="contact">
+    <input type="hidden" name="_subject" value="New contact via empowineering.com">
+    <!-- Spam honeypot (kept hidden) -->
+    <input type="text" name="_gotcha" autocomplete="off" tabindex="-1" style="display:none">
+
+    <div class="form-grid two">
+      <div class="form-field">
+        <label for="name">Name</label>
+        <input id="name" name="name" required>
+      </div>
+      <div class="form-field">
+        <label for="email">Email</label>
+        <input id="email" type="email" name="email" required>
+      </div>
+    </div>
+
+    <div class="form-grid">
+      <div class="form-field">
+        <label for="message">Message</label>
+        <textarea id="message" name="message" rows="6" required></textarea>
+      </div>
+    </div>
+
+    <div class="actions">
+      <button type="submit">Send</button>
+    </div>
+  </form>
+</div>
 </div>
   <div class="block" style="margin-top:14px;background:#111;color:#fff;border:none;text-align:center;border-radius:12px">
     Interested? <a href="contact.html" style="color:#fff;text-decoration:underline">Contact us</a>.
