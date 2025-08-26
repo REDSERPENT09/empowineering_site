@@ -49,7 +49,10 @@
 
 <!-- form -->
 <div class="block downloads-form">
-  <form name="pubs-access" method="POST" data-netlify="true" onsubmit="grantAccess(event)">
+  <form id="pubs-access"
+      action="https://formspree.io/f/mzzabade"
+      method="POST"
+      onsubmit="return handlePubsSubmit(event)">
     <input type="hidden" name="form-name" value="pubs-access">
 
     <div class="form-grid two">
@@ -94,6 +97,10 @@
     </div>
 
     <div class="actions">
+      <!-- Spam honeypot -->
+      <input type="text" name="_gotcha" autocomplete="off" tabindex="-1" style="display:none">
+      <!-- Email subject in Formspree -->
+      <input type="hidden" name="_subject" value="Publications access request (empowineering.com)">
       <button type="submit">Continue to Publications</button>
     </div>
 
@@ -109,24 +116,45 @@
     <small>&copy; <span id="y"></span> Empowineering</small>
   </footer>
 
-  <script>
-    document.getElementById('y').textContent = new Date().getFullYear();
+<script>
+  // Year in footer
+  document.getElementById('y').textContent = new Date().getFullYear();
 
-    // If already granted, skip the form
-    if (localStorage.getItem('downloadsAccessGranted') === '1') {
-      // Optional: uncomment to auto-redirect
-      // window.location.replace('publications.html');
+  // Formspree endpoint for Publications Access:
+  const FORMSPREE_PUBS = 'https://formspree.io/f/mzzabade'; // <-- paste your endpoint URL here
+
+  // Submit handler: POST to Formspree, then gate-bypass + redirect
+  async function handlePubsSubmit(e) {
+    e.preventDefault();
+    const form = e.target;
+
+    // Enforce consent checkbox if present
+    const consent = form.querySelector('#consent');
+    if (consent && !consent.checked) {
+      alert('Please agree to be contacted.');
+      return false;
     }
 
-    // On submit: mark access granted and redirect
-    function grantAccess(e){
-      e.preventDefault();
-      if(!document.getElementById('consent').checked) return;
-      try { localStorage.setItem('downloadsAccessGranted','1'); } catch(_) {}
-      // If hosted on Netlify later, the POST will be captured automatically (data-netlify="true")
-      // For GitHub Pages, we just proceed client-side.
-      window.location.href = 'publications.html';
+    const data = new FormData(form);
+
+    try {
+      const res = await fetch(FORMSPREE_PUBS, {
+        method: 'POST',
+        body: data,
+        headers: { 'Accept': 'application/json' }
+      });
+
+      if (res.ok) {
+        try { localStorage.setItem('downloadsAccessGranted','1'); } catch (_) {}
+        window.location.href = 'publications.html';
+      } else {
+        alert('We could not submit your request. Please try again or email info@empowineering.com');
+      }
+    } catch (err) {
+      alert('Network error. Please try again.');
     }
-  </script>
+    return false;
+  }
+</script>
 </body>
 </html>

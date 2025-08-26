@@ -28,11 +28,17 @@
 <br/>
 <p>If you’re ready to get in touch and start your empowineering journey get in touch by filling out the form below.</p></div>
 <div class='block'>
-<form name="contact" method="POST" data-netlify="true">
+<form id="contact-form"
+      action="https://formspree.io/f/myzdydkk"
+      method="POST" accept-charset="utf-8">
   <input type="hidden" name="form-name" value="contact">
   <label for="name">Name</label><input id="name" name="name" required>
   <label for="email">Email</label><input id="email" type="email" name="email" required>
   <label for="message">Message</label><textarea id="message" name="message" rows="6" required></textarea>
+  <!-- Spam honeypot (kept hidden) -->
+<input type="text" name="_gotcha" autocomplete="off" tabindex="-1" style="display:none">
+<!-- Email subject shown in your Formspree notification -->
+<input type="hidden" name="_subject" value="New contact via empowineering.com">
   <button type="submit">Send</button>
 </form>
 </div>
